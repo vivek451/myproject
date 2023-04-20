@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>My Models</h1>
+  <ul>
+    {% for my_model in my_models %}
+      <li>{{ my_model.name }} ({{ my_model.default_language }})</li>
+    {% empty %}
+      <li>No models found.</li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'my_model_create' %}">Create new model</a>
+{% endblock %}
